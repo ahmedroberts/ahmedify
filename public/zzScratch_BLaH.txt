@@ -1,0 +1,4 @@
+DATABASE_URL=mongodb+srv://adminahmed:z$BlueMarvel1313@cluster0.sf3ee.mongodb.net/?retryWrites=true&w=majority
+# mongodb+srv://adminahmed:<password>@cluster0.sf3ee.mongodb.net/?retryWrites=true&w=majority
+DATABASE_URL=mongodb://localhost/mybrary
+# mongodb+srv://adminahmed:<password>@cluster0.sf3ee.mongodb.net/?retryWrites=true&w=majority
