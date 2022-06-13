@@ -1,5 +1,5 @@
 // 7.  Check if this is development or production
-if (process.env.NODE_env !== 'production'){
+if (process.env.NODE_ENV !== 'production'){
   require('dotenv')
 }
 
