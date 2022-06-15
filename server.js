@@ -33,7 +33,6 @@ db.on('connected', () => console.log('Connected to Mongoose'))
 app.use('/', indexRouter)
 app.use('/authors', authorRouter)
 
-// 3. Start Running the App
 // 9. Update this for Heroku
 const PORT = process.env.PORT || '3000'
 app.set("port", PORT)
