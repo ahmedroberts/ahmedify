@@ -9,7 +9,7 @@ authorsRouter.get('/', async (req, res) => {
     searchOptions.name = new RegExp(req.query.name, 'i')
   }
   try {
-    const authors = await Author.find(searchOptions)
+    const authors = await Author.find({})
     res.render('authors/index', { 
       authors: authors,
       searchOptions: req.query
@@ -27,20 +27,25 @@ authorsRouter.get('/new', (req, res) => {
 
 // Create Author Route
 authorsRouter.post('/', async (req, res) => {
+  // res.send('Create') after body-parser
+  // res.send(req.body.name) Displays the request in the Body
   const author = new Author({
     name: req.body.name
   })
-  try {
-    const newAuthor = await author.save()
-    // res.redirect('authors/${newAuthor.id}') until it is built
-    res.redirect('authors')
-  } catch {
-    res.render('authors/new', {
-      author: author,
-      errorMessage: 'Error creating Author'
-    })
-  }
+  // author.save((err, newAuthor) => {
+  //   if (err) {
+  //     res.render('authors/new', {
+  //       author: author,
+  //       errorMessage: 'Error creating Author'
+  //     })
+  //   } else {
+  //     // res.redirect('authors/${newAuthor.id}') until it is built
+  //     res.redirect('authors')
+  //   }
+  // })
+//  res.send(req.body.name)
 })
+
 
 // Export this Authors router for use
 module.exports = authorsRouter
