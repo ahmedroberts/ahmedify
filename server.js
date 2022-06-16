@@ -13,6 +13,7 @@ const bodyParser = require('body-parser')
 // 4. Require our routers
 const indexRouter = require('./routes/index')
 const authorRouter = require('./routes/authors')
+const bookRouter = require('./routes/books')
 
 // 2. Setting defaults of the App
 app.set('view engine', 'ejs')
@@ -32,6 +33,7 @@ db.on('connected', () => console.log('Connected to Mongoose'))
 // 5. Use Routers inside the app just like Controllers
 app.use('/', indexRouter)
 app.use('/authors', authorRouter)
+app.use('/books', bookRouter)
 
 // 9. Update this for Heroku
 const PORT = process.env.PORT || '3000'
