@@ -10,7 +10,7 @@
     "stop3000": "pwsh zAorCustoms/stop3000.ps1"
   },
   "keywords": [],
-  "author": "",
+  "author": "Ahmed O. Roberts",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.20.0",
