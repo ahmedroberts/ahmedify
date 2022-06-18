@@ -6,11 +6,11 @@
   </div>
   <div>
     <label for="publishedAfter">Published After</label>
-    <input type="text" name="publishedAfter" value="<%= searchOptions.publishedAfter %>">
+    <input type="date" name="publishedAfter" value="<%= searchOptions.publishedAfter %>">
   </div>
   <div>
     <label for="publishedBefore">Published Before</label>
-    <input type="text" name="publishedBefore" value="<%= searchOptions.publishedBefore %>">
+    <input type="date" name="publishedBefore" value="<%= searchOptions.publishedBefore %>">
   </div>
   <button type="submit">Search</button>
 </form>
@@ -21,6 +21,8 @@
       <img height="150" width="100" src="<%= book.coverImagePath %> ">
       <br>
       <%= book.title %>
+      <br>
+      <%= book.publishDate %>
     </div>
   <% }) %> 
 </div>

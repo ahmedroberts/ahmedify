@@ -16,9 +16,21 @@ const upload = multer({
 
 // All Books Route
 router.get('/', async (req, res) => {
-  // res.send('Here Are all the Books!')
+  let query = Book.find()
+  // Search Titles
+  if (req.query.title != null && req.query.title != '') {
+    query = query.regex('title', new RegExp(req.query.title, 'i'))
+  }
+  // Search Before (less than date)
+  if (req.query.publishedBefore != null && req.query.publishedBefore != '') {
+    query = query.lte('publishDate', req.query.publishedBefore)
+  }
+  // Search After (greates than date)
+  if (req.query.publishedAfter != null && req.query.publishedAfter != '') {
+    query = query.gte('publishDate', req.query.publishedAfter)
+  }
   try {
-    const books = await Book.find({})
+    const books = await query.exec()
     res.render('books/index', {
       books: books,
       searchOptions: req.query
@@ -72,7 +84,7 @@ async function renderNewPage(res, book, hasError = false) {
       authors: authors,
       book: book
     }
-    if (hasError) parmams.errorMessage = 'Error Creating Book'
+    if (hasError) params.errorMessage = 'Error Creating Book'
     res.render('books/new', params)
   } catch {
     res.redirect('/books')
