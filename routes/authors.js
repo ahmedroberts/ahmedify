@@ -12,7 +12,8 @@ authorsRouter.get('/', async (req, res) => {
     const authors = await Author.find(searchOptions)
     res.render('authors/index', { 
       authors: authors,
-      searchOptions: req.query
+      searchOptions: searchOptions
+      // searchOptions: req.query
     })
   } catch {
     res.redirect('/')
