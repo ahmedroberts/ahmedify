@@ -43,5 +43,25 @@ authorsRouter.post('/', async (req, res) => {
   }
 })
 
+// Show our author
+authorsRouter.get('/:id', (req, res) => {
+  res.send('Show Author ' + req.params.id)
+})
+
+// Edit our author
+authorsRouter.get('/:id/edit', (req, res) => {
+  res.send('Edit Author ' + req.params.id)
+})
+
+// Update our author
+authorsRouter.put('/:id', (req, res) => {
+  res.send('Update Author ' + req.params.id)
+})
+
+// Delete our author
+authorsRouter.delete('/:id', (req, res) => {
+  res.send('Delete Author ' + req.params.id)
+})
+
 // Export this Authors router for use
 module.exports = authorsRouter
