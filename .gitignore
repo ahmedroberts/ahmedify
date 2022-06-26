@@ -6,9 +6,6 @@
 ## node modules
 node_modules
 
-# locally uploaded files multi-part data
-public/uploads
-
 # custom debug scripts
 zAorCustoms
 .txt
