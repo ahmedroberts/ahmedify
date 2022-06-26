@@ -2,6 +2,7 @@ const express = require('express')
 const router = express.Router()
 const Book = require('../models/book')
 const Author = require('../models/author')
+// const imageMimeTypes = ['image/jpeg', 'image/gif', 'image/png' ]
 
 // All Books Route
 router.get('/', async (req, res) => {
@@ -37,18 +38,15 @@ router.get('/new', async (req, res) => {
 
 // Create Book Route With FilePond JSon.String
 router.post('/', async (req, res) => {
-  // res.send('Creating all the Books here') 
-  const fileName = req.file != null ? req.file.filename : null
   const book = new Book({
     title: req.body.title,
     author: req.body.author,
     publishDate: new Date(req.body.publishDate),
     pageCount: req.body.pageCount,
-    // coverImageName: fileName,
     description: req.body.description
   })
-  // Function to upload JSOn encodeed file to db
-  saveCover(book, req.body.cover)
+  // // Function to upload JSOn encodeed file to db
+  // saveCover(book, req.body.cover)
 
   try {
     const newBook = await book.save()
@@ -68,19 +66,21 @@ async function renderNewPage(res, book, hasError = false) {
     }
     if (hasError) params.errorMessage = 'Error Creating Book'
     res.render('books/new', params)
-  } catch {
-    res.redirect('/books')
+  } catch (err) {
+    console.log(err)
+    res.redirect('books')
   }
 }
 
-// Function to save JSON encoded funtion
-function saveCover(book, coverEncoded) {
-  if (coverEncoded == null) return
-  const cover = JSON.parse(coverEncoded)
-  if (cover != null && imageMimeTypes.includes(cover.mimetype)) {
-    book.coverImage = new Buffer.from(cover.data, 'base64')
-    book.coverImageType = cover.type
-  }
-}
+// // Function to save JSON encoded funtion
+// function saveCover(book, coverEncoded) {
+//   console.log('here: ',coverEncoded)
+//   if (coverEncoded == null) return
+//   const cover = JSON.parse(coverEncoded)
+//   if (cover != null && imageMimeTypes.includes(cover.mimetype)) {
+//     book.coverImage = new Buffer.from(cover.data, 'base64')
+//     book.coverImageType = cover.type
+//   }
+// }
 
 module.exports = router

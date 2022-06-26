@@ -16,13 +16,18 @@
 </form>
 <br><br>
 <div>
+  <h2>Books by Author</h2>  
   <% books.forEach(book => { %> 
-    <div>
-      <img height="150" width="100" src="<%= book.coverImagePath %> ">
+    <div> 
+     <!-- <img height="300" width="200" src="<%= book.coverImagePath %> ">  -->
       <br>
       <%= book.title %>
       <br>
+      <%= book.description %>
+      <br>
+      <%= book.author %>
+      <br>
       <%= book.publishDate %>
-    </div>
+    </div> -->
   <% }) %> 
 </div>

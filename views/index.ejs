@@ -3,7 +3,14 @@
 <br><br>
 <div>
   <% books.forEach(book => { %> 
-      <!-- <img height="300" width="200" src="<%= book.coverImagePath %> "> -->
-      <img height="300" src="<%= book.coverImagePath %> ">
+      <!-- <img height="300" width="200" src="<%= book.coverImagePath %> "> 
+      <img height="300" src="<%= book.coverImagePath %> "> -->
+      <%= book.title %>
+      <br>
+      <%= book.description %>
+      <br>
+      <%= book.author %>
+      <br>
+      <%= book.publishDate %>
   <% }) %> 
 </div>

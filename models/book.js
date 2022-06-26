@@ -21,14 +21,12 @@ const bookSchema = new mongoose.Schema({
     required: true,
     default: Date.now
   },
-  coverImage: { 
-    type: Buffer,
-    required: true
-  },
-  coverImageType: { 
-    type: String,
-    required: true
-  },
+  // coverImage: { 
+  //   type: Buffer
+  // },
+  // coverImageType: { 
+  //   type: String
+  // },
   author: {
     type: mongoose.Schema.Types.ObjectId,
     required: true,
