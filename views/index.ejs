@@ -2,16 +2,18 @@
 <h2>Recently Added</h2>
 <br><br>
 <div>
-  <% books.forEach(book => { %> 
+  <% books.forEach(book => { %>
+    <a href="/books"<%= book.id %> >
       <!-- <img height="300" width="200" src="<%= book.coverImagePath %> "> 
       <img height="300" src="<%= book.coverImagePath %> "> -->
-      <%= book.title %>
+      <strong><%= book.title %></strong>
       <br>
       <%= book.description %>
       <br>
       <%= book.author %>
       <br>
       <%= book.publishDate %>
+    </a>
       <br><br><hr>
       <br>
   <% }) %> 

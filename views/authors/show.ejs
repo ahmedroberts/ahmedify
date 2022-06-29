@@ -5,16 +5,18 @@
 
   <h2>Books by Author</h2>  
   <% booksByAuthor.forEach(book => { %> 
-    <div> 
-     <!-- <img height="300" width="200" src="<%= book.coverImagePath %> ">  -->
-      <br>
-      <%= book.title %>
-      <br>
-      <%= book.description %>
-      <br>
-      <%= book.author %>
-      <br>
-      <%= book.publishDate %>
+    <div>
+      <a href="/books/<%= book.id %> ">
+      <!-- <img height="300" width="200" src="<%= book.coverImagePath %> ">  -->
+        <br>
+        <strong><%= book.title %></strong>
+        <br>
+        <%= book.description %>
+        <br>
+        <%= book.author %>
+        <br>
+        <%= book.publishDate %>
+      </a>
     </div> -->
   <% }) %> 
 
