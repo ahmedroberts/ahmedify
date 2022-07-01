@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display&family=Rubik+Moonrocks&display=swap');
 @import 'shared/header.css';
 @import 'shared/buttons.css';
+@import 'shared/form.css';
 
 /* 
 font-family: 'Playfair Display', serif;
