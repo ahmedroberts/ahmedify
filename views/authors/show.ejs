@@ -5,12 +5,17 @@
 </div>
 
 <% if (booksByAuthor.length > 0) { %>
+  <h2 class="page-header">Books by Author</h2>  
+  <%- include('../partials/bookGrid', { books: booksByAuthor }) %> 
+<% } %>
+
+<!-- My Way <% if (booksByAuthor.length > 0) { %>
 
   <h2 class="page-header">Books by Author</h2>  
   <% booksByAuthor.forEach(book => { %> 
     <div>
       <a href="/books/<%= book.id %> ">
-      <!-- <img height="300" width="200" src="<%= book.coverImagePath %> ">  -->
+       <img height="300" width="200" src="<%= book.coverImagePath %> ">  
         <br>
         <strong><%= book.title %></strong>
         <br>
@@ -20,7 +25,7 @@
         <br>
         <%= book.publishDate %>
       </a>
-    </div> -->
-  <% }) %> 
+    </div>
+  <% }) %> -->
 
 <% } %>

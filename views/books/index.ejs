@@ -20,6 +20,14 @@
     <button class="btn btn-primary" type="submit">Search</button>
   </div>
 </form>
+<%- include('../partials/bookGrid', { books: books, large: true }) %> 
+
+<br><br>
+<hr>
+<hr style="width:70%;text-align:right;margin-right:0"> 
+<h3 style="text-align:center">---- Mine ----</h3>
+<hr style="width:70%;text-align:left;margin-left:0"> 
+<hr>
 <br><br>
 <div>
   <h2>Books by Author</h2>  
@@ -33,7 +41,7 @@
         <%= book.author %>
         <br>
         <%= book.publishDate.toDateString() %>
-      </div> -->
+      </div>
   </a>
   <% }) %> 
 </div>

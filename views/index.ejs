@@ -1,5 +1,13 @@
 <h1>--==@  :  Middle  :  @==--</h1>
 <h2 class="page-header">Recently Added</h2>
+<%- include('partials/bookGrid', { books: books, large: true }) %> 
+
+<br><br>
+<hr>
+<hr style="width:70%;text-align:right;margin-right:0"> 
+<h3 style="text-align:center">---- Mine ----</h3>
+<hr style="width:70%;text-align:left;margin-left:0"> 
+<hr>
 <br><br>
 <div>
   <% books.forEach(book => { %>
