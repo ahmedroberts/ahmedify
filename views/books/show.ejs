@@ -1,8 +1,18 @@
 <!-- <h1>--==@ One of Ahmed's Books @==--</h1> -->
+<% bookImage = 'https://via.placeholder.com/200x300/ED9B40/BA3B46?text=Ahmedify.io' %>
+
 <h2 class="page-header"><%= book.title %></h2>
 <div class="book-details">
   <div>
-    <img class="book-cover" src="<%= book.coverImagePath %>" title="<%= book.title %>">
+    <!-- <img class="book-cover" src="<%= book.coverImagePath %>"
+    title="<%= book.title %>"> -->
+
+    <img class="book-cover" width="200" height="300"
+        src="<%= book.coverImagePath != null
+          ?  book.coverImagePath 
+          : bookImage %>"
+        alt="<%= book.title %>" title="<%= book.title %>">
+
     <!-- links -->
     <div class="book-details-btn-grid">
       <a class="btn btn-primary" href="/books/<%= book.id %>/edit">Edit</a>
